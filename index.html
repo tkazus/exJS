@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менеджер заказов</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 id="mainTitle">📦 Менеджер заказов</h1>
+    <p class="subtitle">Система учёта заказов клиентов</p>
+
+    <!-- ФОРМА ДОБАВЛЕНИЯ ЗАКАЗА (пока без обработки) -->
+    <section class="card">
+        <h2>Добавить заказ</h2>
+        <form id="orderForm">
+            <input type="text"   id="orderNumber" placeholder="Номер заказа (например, A-105)">
+            <input type="text"   id="client"      placeholder="Клиент">
+            <input type="text"   id="product"     placeholder="Товар">
+            <input type="number" id="quantity"    placeholder="Количество" min="1">
+            <input type="number" id="price"       placeholder="Стоимость (₽)" min="1">
+            <select id="status">
+                <option value="Новый">Новый</option>
+                <option value="В обработке">В обработке</option>
+                <option value="Отправлен">Отправлен</option>
+                <option value="Доставлен">Доставлен</option>
+                <option value="Отменён">Отменён</option>
+            </select>
+            <button type="submit">Добавить заказ</button>
+        </form>
+        <p id="formMessage" class="message"></p>
+    </section>
+
+    <!-- БЛОК ПОИСКА И ФИЛЬТРОВ (пока без обработки) -->
+    <section class="card">
+        <h2>Поиск и фильтрация</h2>
+        <input type="text" id="searchInput" placeholder="🔍 Поиск по клиенту или номеру заказа">
+
+        <div class="controls">
+            <select id="filterStatus">
+                <option value="">Все статусы</option>
+                <option value="Новый">Новый</option>
+                <option value="В обработке">В обработке</option>
+                <option value="Отправлен">Отправлен</option>
+                <option value="Доставлен">Доставлен</option>
+                <option value="Отменён">Отменён</option>
+            </select>
+
+            <select id="filterPrice">
+                <option value="">Любая стоимость</option>
+                <option value="5000">до 5000 ₽</option>
+                <option value="20000">до 20000 ₽</option>
+                <option value="100000">до 100000 ₽</option>
+            </select>
+
+            <select id="sortSelect">
+                <option value="">Без сортировки</option>
+                <option value="priceAsc">Стоимость ↑</option>
+                <option value="priceDesc">Стоимость ↓</option>
+                <option value="numAsc">Номер ↑</option>
+                <option value="numDesc">Номер ↓</option>
+            </select>
+
+            <button id="resetBtn" type="button">Сбросить</button>
+        </div>
+    </section>
+
+    <!-- СПИСОК ЗАКАЗОВ И СЧЁТЧИК -->
+    <section class="card">
+        <h2>Заказы: <span id="counter">0</span></h2>
+        <div id="ordersList"></div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
