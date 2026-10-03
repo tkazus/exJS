@@ -63,10 +63,17 @@ form button:hover {
     background: #2980b9;
 }
 
+/* Сообщения пользователю */
 .message {
     min-height: 20px;
     font-size: 14px;
     margin: 8px 0 0;
+}
+.message.error {
+    color: #e74c3c;
+}
+.message.success {
+    color: #27ae60;
 }
 
 /* Фильтры */
@@ -151,6 +158,28 @@ form button:hover {
     background: #ecf0f1;
     color: #2c3e50;
     margin-top: 4px;
+}
+
+/* Кнопки в карточке заказа */
+.order-actions {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+.order-actions button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #fff;
+    transition: .2s;
+}
+.btn-delete {
+    background: #e74c3c;
+}
+.btn-delete:hover {
+    background: #c0392b;
 }
 
 .empty {
