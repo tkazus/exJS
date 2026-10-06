@@ -1,10 +1,3 @@
-/* =========================================================
-   МЕНЕДЖЕР ЗАКАЗОВ — ЗАНЯТИЕ 4
-   Смена статуса и сохранение в localStorage
-   ========================================================= */
-
-/* ---------- 1. КОНСТАНТЫ И СТАРТОВЫЕ ДАННЫЕ ---------- */
-
 const STORAGE_KEY = "orders_data";
 
 // Возможные статусы заказа
@@ -50,8 +43,6 @@ const defaultOrders = [
     }
 ];
 
-/* ---------- 2. РАБОТА С localStorage ---------- */
-
 // Загрузка заказов из localStorage
 function loadOrders() {
     const data = localStorage.getItem(STORAGE_KEY);
@@ -77,7 +68,6 @@ function saveOrders() {
 let orders = loadOrders();
 saveOrders(); // сразу сохраняем, если хранилище было пустое
 
-/* ---------- 3. ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ ---------- */
 
 function getStatusClass(status) {
     if (status === "Доставлен") {
@@ -89,13 +79,11 @@ function getStatusClass(status) {
     }
 }
 
-/* ---------- 4. СЧЁТЧИК ---------- */
 
 function updateCounter(count) {
     $("#counter").text(count);
 }
 
-/* ---------- 5. СООБЩЕНИЯ ПОЛЬЗОВАТЕЛЮ ---------- */
 
 function showMessage(text, isError) {
     const $msg = $("#formMessage");
@@ -111,7 +99,6 @@ function showMessage(text, isError) {
     }, 3000);
 }
 
-/* ---------- 6. ВАЛИДАЦИЯ ФОРМЫ ---------- */
 
 function validateOrder(data) {
     if (!data.number || data.number.trim().length < 2) {
@@ -140,7 +127,6 @@ function validateOrder(data) {
     return { ok: true, message: "Заказ успешно добавлен!" };
 }
 
-/* ---------- 7. ДОБАВЛЕНИЕ ЗАКАЗА ---------- */
 
 function addOrder(data) {
     let newId = 1;
@@ -163,7 +149,6 @@ function addOrder(data) {
     return newOrder;
 }
 
-/* ---------- 8. УДАЛЕНИЕ ЗАКАЗА ---------- */
 
 function deleteOrder(id) {
     const index = orders.findIndex(function (o) { return o.id === id; });
@@ -176,7 +161,6 @@ function deleteOrder(id) {
     return false;
 }
 
-/* ---------- 9. СМЕНА СТАТУСА ЗАКАЗА ---------- */
 
 // Переводит статус заказа на следующий по кругу
 function changeStatus(id) {
@@ -196,7 +180,6 @@ function changeStatus(id) {
     return order.status;
 }
 
-/* ---------- 10. ВЫВОД ЗАКАЗОВ НА СТРАНИЦУ ---------- */
 
 function renderOrders(list) {
     const $container = $("#ordersList");
@@ -235,7 +218,6 @@ function renderOrders(list) {
     });
 }
 
-/* ---------- 11. ПОИСК, ФИЛЬТРЫ, СОРТИРОВКИ ---------- */
 
 function searchOrders(query) {
     const q = query.trim().toLowerCase();
@@ -315,7 +297,6 @@ function applyFiltersAndRender() {
     renderOrders(result);
 }
 
-/* ---------- 12. ЗАПУСК И СОБЫТИЯ ---------- */
 
 $(document).ready(function () {
 
