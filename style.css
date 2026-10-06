@@ -175,6 +175,12 @@ form button:hover {
     color: #fff;
     transition: .2s;
 }
+.btn-status {
+    background: #f39c12;
+}
+.btn-status:hover {
+    background: #e67e22;
+}
 .btn-delete {
     background: #e74c3c;
 }
