@@ -11,8 +11,8 @@
     <h1 id="mainTitle">📦 Менеджер заказов</h1>
     <p class="subtitle">Система учёта заказов клиентов</p>
 
-    <!-- ФОРМА ДОБАВЛЕНИЯ ЗАКАЗА (пока без обработки) -->
-    <section class="card">
+    <!-- ФОРМА ДОБАВЛЕНИЯ ЗАКАЗА -->
+    <section class="card" id="formCard">
         <h2>Добавить заказ</h2>
         <form id="orderForm">
             <input type="text"   id="orderNumber" placeholder="Номер заказа (например, A-105)">
@@ -32,8 +32,8 @@
         <p id="formMessage" class="message"></p>
     </section>
 
-    <!-- БЛОК ПОИСКА И ФИЛЬТРОВ (пока без обработки) -->
-    <section class="card">
+    <!-- БЛОК ПОИСКА И ФИЛЬТРОВ -->
+    <section class="card" id="filterCard">
         <h2>Поиск и фильтрация</h2>
         <input type="text" id="searchInput" placeholder="🔍 Поиск по клиенту или номеру заказа">
 
@@ -67,8 +67,11 @@
     </section>
 
     <!-- СПИСОК ЗАКАЗОВ И СЧЁТЧИК -->
-    <section class="card">
-        <h2>Заказы: <span id="counter">0</span></h2>
+    <section class="card" id="listCard">
+        <div class="list-header">
+            <h2>Заказы: <span id="counter">0</span></h2>
+            <button id="toggleListBtn" type="button">Свернуть список</button>
+        </div>
         <div id="ordersList"></div>
     </section>
 
